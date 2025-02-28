@@ -1,0 +1,300 @@
+{
+	"info": {
+		"_postman_id": "3f21e6cf-eb6b-40d8-90cb-a950d14584f7",
+		"name": "FABRICA DE HELADOS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "42601615"
+	},
+	"item": [
+		{
+			"name": "CLIENTES",
+			"item": [
+				{
+					"name": "Get Cliente by ID(cache)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{banks}/clientes/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Create client",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "{{banks}}/clientes"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Client",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{banks}}/clientes/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Client",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"clienteId\": 2,\r\n    \"nombre\": \"wiliam gastelu\",\r\n    \"email\": \"wiliam.gastelu@example.com\",\r\n    \"telefono\": \"987456321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{banks}}/clientes/2"
+					},
+					"response": []
+				},
+				{
+					"name": "List Client",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Carrito de Producto",
+			"item": [
+				{
+					"name": "Obtener Carrito / Id",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Insertar Carrito",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cliente\": {\r\n        \r\n        \"nombre\": \"jasmin Pérez\",\r\n        \"email\": \"jas.perez@example.com\",\r\n        \"telefono\": \"985632147\"\r\n    },\r\n    \"estado\": \"activo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{banks}}/carritos"
+					},
+					"response": []
+				},
+				{
+					"name": "Modificar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"carritoId\": 1,\r\n    \"cliente\": {\r\n        \r\n        \"nombre\": \"jordy\",\r\n        \"email\": \"jordy@example.com\",\r\n        \"telefono\": \"541263698\"\r\n    },\r\n    \"fechaCreacion\": \"2025-02-25T03:37:41.983+00:00\",\r\n    \"estado\": \"activo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{banks}}/carritos/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Carrito",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{banks}}/carritos/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pedidos",
+			"item": [
+				{
+					"name": "LIst Pedid",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Pedido",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{banks}}/pedidos/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Put Pedidos",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"pedidoId\": 2,\r\n        \"cliente\": {\r\n            \"clienteId\": 6,\r\n            \"nombre\": \"wiliam\",\r\n            \"email\": \"as.ahora@example.com\",\r\n            \"telefono\": \"789654123\"\r\n        },\r\n        \"fecha\": \"2025-02-27T03:39:45.022+00:00\",\r\n        \"total\": 150.0\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{banks}}/pedidos/2"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Detalle Pedido",
+			"item": [
+				{
+					"name": "Get Client",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9500/detalle_pedidos"
+					},
+					"response": []
+				},
+				{
+					"name": "Create DetallePedido",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cantidad\": 2,\r\n    \"subtotal\": 20.0,\r\n    \"pedido\": {\r\n        \"fecha\": \"2025-02-26T21:30:00Z\",\r\n        \"total\": 20.0\r\n    },\r\n    \"helado\": {\r\n        \"nombre\": \"Helado de coco\",  \r\n        \"tipo\": \"Crema\",\r\n        \"precio\": 10.0,\r\n        \"descripcion\": \"Delicioso helado de coco\"\r\n    },\r\n    \"clienteId\": 6  // Asegúrate de que este ID exista en la base de datos\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{banks}}}/detalle_pedidos"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Client",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:9500/detalle_pedidos/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Put Client",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"detalleId\": 4,\r\n    \"pedido\": {\r\n        \"pedidoId\": 4,\r\n        \"cliente\": {\r\n            \"clienteId\": 6,\r\n            \"nombre\": \"as\",\r\n            \"email\": \"as.ahora@example.com\",\r\n            \"telefono\": \"789654123\"\r\n        },\r\n        \"fecha\": \"2025-02-27T03:41:16.757+00:00\",\r\n        \"total\": 20.0\r\n    },\r\n    \"helado\": {\r\n        \"heladoId\": 5,\r\n        \"nombre\": \"Helado de coco\",\r\n        \"tipo\": \"Crema\",\r\n        \"precio\": 10.0,\r\n        \"descripcion\": \"Delicioso helado de coco\"\r\n    },\r\n    \"cantidad\": 100,\r\n    \"subtotal\": 3500.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{banks}}/detalle_pedidos/4"
+					},
+					"response": []
+				},
+				{
+					"name": "DetallePedido by ID(cache)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{banks}}/detalle_pedidos/4"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Helado",
+			"item": [
+				{
+					"name": "List Helados",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Create Helado",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n        \"nombre\": \"Helado de maracumango\",\r\n        \"tipo\": \"Crema\",\r\n        \"precio\": 15.0,\r\n        \"descripcion\": \"Delicioso helado de maracumango\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{banks}}/helados"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Helado",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{banks}}/helados/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Put Helado",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"heladoId\": 1,\r\n        \"nombre\": \"Helado de fresa\",\r\n        \"tipo\": \"Crema\",\r\n        \"precio\": 10.0,\r\n        \"descripcion\": \"Delicioso helado de fresa\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{banks}}/helados/1"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
